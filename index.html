@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/functions.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+  <title>Cerebit</title>
+</head>
+<body>
+  <div class="bg">
+    
+    <div class="startMenu">
+    
+      <h1 id="name" class="startMenu">Cerebit</h1>
+    
+      <div class="screen-game" id="Screen">
+      
+        <tr>
+          <td>
+            <button id="button-1">
+              <img id="item-1" class="none" onclick="showCard1()">
+            </button>
+          </td>
+          <td>
+            <button id="button-2">
+              <img id="item-2" class="none" onclick="showCard2()">
+            </button>
+          </td>
+          <td>
+            <button id="button-3">
+              <img id="item-3" class="none" onclick="showCard3()">
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button id="button-4">
+              <img id="item-4" class="none" onclick="showCard4()">
+            </button>
+          </td>
+          <td>
+            <button id="button-5">
+              <img id="item-5" class="none" onclick="showCard5()">
+            </button>
+          </td>
+          <td>
+            <button id="button-6">
+              <img id="item-6" class="none" onclick="showCard6()">
+            </button>
+          </td>
+        </tr>
+
+      </div>
+      
+      <button id="start" class="startMenu" onclick="shuffle()">Shuffle</button>
+
+    </div>
+      
+  </div>
+
+</body>
+</html> 

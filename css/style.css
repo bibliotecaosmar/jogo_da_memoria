@@ -1,0 +1,66 @@
+button {
+    padding: 0;
+}
+
+.bg {
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-color: #E88851;
+}    
+
+.startMenu {
+    text-align: center; 
+}    
+
+.screen-game {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 40px;
+}    
+
+.none {
+    opacity: 100%;
+}
+
+.hidden_saber {
+    background-image: url(../asset/item-0.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.hidden_archer {
+    background-image: url(../asset/item-0.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.hidden_lancer {
+    background-image: url(../asset/item-0.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.saber {
+    background-image: url(../asset/item-1.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.archer {
+    background-image: url(../asset/item-2.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.lancer {
+    background-image: url(../asset/item-3.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
