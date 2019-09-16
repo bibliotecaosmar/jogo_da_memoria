@@ -5,7 +5,7 @@ button {
 .bg {
     background-size: cover;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     background-color: #E88851;
 }    
 
@@ -39,6 +39,27 @@ button {
 
 .hidden_lancer {
     background-image: url(../asset/item-0.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.locked_saber {
+    background-image: url(../asset/item-1.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.locked_archer {
+    background-image: url(../asset/item-2.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
+.locked_lancer {
+    background-image: url(../asset/item-3.jpg);
     background-size: cover;
     width: 150px;
     height: 260px;
