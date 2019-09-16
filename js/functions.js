@@ -7,6 +7,23 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
+function removeHidden(card) {
+  return card.split('_')[1]
+}
+
+function addHidden(card) {
+  return ['hidden_', card].join('')
+}
+
+function addLocked(card) {
+  return ['locked_', card].join('')
+}
+
+/**
+ * =======================================
+ *  Main Functions
+ * =======================================
+ */
 function sequencialIntNoRepeated(rang, arr = []) {
   x = Math.floor(Math.random() * 10).toString()
   if(arr.indexOf(x) == -1 && x < rang) {
@@ -25,7 +42,6 @@ function setCards(a) {
   }
 }
 
-//============================================//
 function flip(card_num) {
   card = document.getElementById('item-'+card_num).className
   cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
@@ -48,18 +64,6 @@ function checkFlips() {
   }
 }
 
-function removeHidden(card) {
-  return card.split('_')[1]
-}
-
-function addHidden(card) {
-  return ['hidden_', card].join('')
-}
-
-function addLocked(card) {
-  return ['locked_', card].join('')
-}
-
 function comparator() {
   let cards = []
   for(let i = 0; i < 6; i++) {
@@ -73,10 +77,6 @@ function comparator() {
   }
   return false
 }
-
-// function applyCards() {
-
-// }
 
 function lockCards() {
   for(let i = 0; i < 6; i++) {
@@ -105,7 +105,7 @@ function resetChance() {
 
 /**
  * =======================================
- *  Main Functions
+ *  Features
  * =======================================
  */
 function shuffle() {
@@ -119,12 +119,6 @@ function shuffle() {
   }
   setCards(x)
 }
-
-/**
- * =======================================
- *  Html Manager
- * =======================================
- */
 
 function flipCard1() {
   flip(1)
