@@ -21,8 +21,24 @@ function setCards(a) {
   }
 }
 
-function removeHidden(arr) {
-  return arr.split('_')[1]
+function removeHidden(card) {
+  return card.split('_')[1]
+}
+
+function addHidden(card) {
+  return ['hidden_', card].join('')
+}
+
+function flipLimiter() {
+
+}
+
+function comparator() {
+
+}
+
+function lockCards() {
+
 }
 
 /**
@@ -42,26 +58,62 @@ function shuffle() {
   setCards(x)
 }
 
-function showCard1() {
-  document.getElementById("item-1").className = removeHidden(document.getElementById("item-1").className)
+/**
+ * =======================================
+ *  Html Manager
+ * =======================================
+ */
+
+function flipCard1() {
+  let card = document.getElementById("item-1").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-1").className = removeHidden(card)
+  }else{
+    document.getElementById("item-1").className = addHidden(card)
+  }
 }
 
-function showCard2() {
-  document.getElementById("item-2").className = removeHidden(document.getElementById("item-2").className)
+function flipCard2() {
+  let card = document.getElementById("item-2").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-2").className = removeHidden(card)
+  }else{
+    document.getElementById("item-2").className = addHidden(card)
+  }
 }
 
-function showCard3() {
-  document.getElementById("item-3").className = removeHidden(document.getElementById("item-3").className)
+function flipCard3() {
+  let card = document.getElementById("item-3").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-3").className = removeHidden(card)
+  }else{
+    document.getElementById("item-3").className = addHidden(card)
+  }
 }
 
-function showCard4() {
-  document.getElementById("item-4").className = removeHidden(document.getElementById("item-4").className)
+function flipCard4() {
+  let card = document.getElementById("item-4").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-4").className = removeHidden(card)
+  }else{
+    document.getElementById("item-4").className = addHidden(card)
+  }
 }
 
-function showCard5() {
-  document.getElementById("item-5").className = removeHidden(document.getElementById("item-5").className)
+function flipCard5() {
+  let card = document.getElementById("item-5").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-5").className = removeHidden(card)
+  }else{
+    document.getElementById("item-5").className = addHidden(card)
+  }
 }
 
-function showCard6() {
-  document.getElementById("item-6").className = removeHidden(document.getElementById("item-6").className)
+function flipCard6() {
+  let card = document.getElementById("item-6").className
+  if(card.indexOf('hidden_') != -1){
+    document.getElementById("item-6").className = removeHidden(card)
+  }else{
+    document.getElementById("item-6").className = addHidden(card)
+  }
 }
