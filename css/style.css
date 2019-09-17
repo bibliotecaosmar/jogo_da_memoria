@@ -28,6 +28,17 @@ button {
     font-family: 'Righteous', cursive;
 }
 
+.startMenu {
+    background-color: white; /* Green */
+    border: none;
+    color: #1465CC;
+    padding: 8px 23px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px    
+}
+
 .screen-game {
     text-align: center;
 }    

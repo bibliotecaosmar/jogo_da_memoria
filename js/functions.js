@@ -116,9 +116,10 @@ function shuffle() {
 
   for(let i = 0; i < cards.length; i++) {
     x[i] = cards[parseInt(sequence[i])]
-
   }
   setCards(x)
+  document.getElementById('Screen').hidden = false
+  document.getElementById('start').innerHTML = "Shuffle"
 }
 
 function flip(card_num) {
