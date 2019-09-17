@@ -45,9 +45,11 @@ function setCards(a) {
 function checkFlips() {
   if(document.getElementById('FlippedCards').innerHTML == 2) {
     if(comparator()) {
+      addPoints()
       lockCards()
     }else {
       sleep(1000)
+      deductPoints()
       resetChance()
     }
   }
@@ -89,6 +91,16 @@ function setCardsNotLockeds() {
 function resetChance() {
   setCardsNotLockeds()
   document.getElementById('FlippedCards').innerHTML = "0"
+}
+
+function addPoints() {
+  currentPoints = parseInt(document.getElementById('Points').innerHTML)
+  document.getElementById('Points').innerHTML = currentPoints + 2
+}
+
+function deductPoints() {
+  currentPoints = parseInt(document.getElementById('Points').innerHTML)
+  document.getElementById('Points').innerHTML = currentPoints - 2
 }
 
 

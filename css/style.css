@@ -3,24 +3,45 @@ button {
 }
 
 .bg {
+    background-image: url('../asset/background.png');
     background-size: cover;
     width: 100%;
     height: 110vh;
-    background-color: #E88851;
-}    
+    background-color: #1465CC;
+}
 
-.startMenu {
-    text-align: center; 
-}    
+.title {
+    background-color: #1465CC;
+    margin: 1px;
+    padding: 1px;
+    padding-left: 3px;
+    color: white;
+    font-family: 'Righteous', cursive;
+}
+
+.hub {
+    background-color: #1465CC;
+    padding: 3px;
+    margin: 0px;
+    text-align: left;
+    color: white;
+    font-family: 'Righteous', cursive;
+}
 
 .screen-game {
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 40px;
+    text-align: center;
 }    
 
-.none {
-    opacity: 100%;
+.stage1 {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 40px;
+}
+
+.stage2 {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 40px;
 }
 
 .hidden_saber {
