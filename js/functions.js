@@ -42,17 +42,6 @@ function setCards(a) {
   }
 }
 
-function flip(card_num) {
-  card = document.getElementById('item-'+card_num).className
-  cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
-  if(card.indexOf('hidden_') != -1) {
-    document.getElementById("item-"+card_num).className = removeHidden(card)
-    ++cardsFlippeds
-    document.getElementById('FlippedCards').innerHTML = cardsFlippeds.toString()
-  }
-  checkFlips()
-}
-
 function checkFlips() {
   if(document.getElementById('FlippedCards').innerHTML == 2) {
     if(comparator()) {
@@ -120,26 +109,13 @@ function shuffle() {
   setCards(x)
 }
 
-function flipCard1() {
-  flip(1)
-}
-
-function flipCard2() {
-  flip(2)
-}
-
-function flipCard3() {
-  flip(3)
-}
-
-function flipCard4() {
-  flip(4)
-}
-
-function flipCard5() {
-  flip(5)
-}
-
-function flipCard6() {
-  flip(6)
+function flip(card_num) {
+  card = document.getElementById('item-'+card_num).className
+  cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
+  if(card.indexOf('hidden_') != -1) {
+    document.getElementById("item-"+card_num).className = removeHidden(card)
+    ++cardsFlippeds
+    document.getElementById('FlippedCards').innerHTML = cardsFlippeds.toString()
+  }
+  checkFlips()
 }
