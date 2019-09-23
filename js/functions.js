@@ -3,10 +3,6 @@
  *  Utilities
  * =======================================
  */
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 function removeHidden(card) {
   return card.split('_')[1]
 }
@@ -17,6 +13,18 @@ function addHidden(card) {
 
 function addLocked(card) {
   return ['locked_', card].join('')
+}
+
+function lockAll() {
+  for(let i = 0; i < 6; i++) {
+    document.getElementById('item-'(i+1)).onclick = 'null'
+  }
+}
+
+function unlockAll() {
+  for(let i = 0; i < 6; i++) {
+    document.getElementById('item-'(i+1)).onclick = flip(i+1)
+  }
 }
 
 /**
@@ -42,15 +50,18 @@ function setCards(a) {
   }
 }
 
+function fail() {
+  deductPoints()
+  resetChance()
+}
+
 function checkFlips() {
   if(document.getElementById('FlippedCards').innerHTML == 2) {
     if(comparator()) {
       addPoints()
       lockCards()
     }else {
-      sleep(1000)
-      deductPoints()
-      resetChance()
+      time = setTimeout(function(){fail(); clearTimeout(time)}, 2000)
     }
   }
 }
