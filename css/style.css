@@ -62,21 +62,21 @@ button {
     height: 260px;
 }
 
-.hidden_saber {
+.setdown_saber {
     background-image: url(../asset/item-0.jpg);
     background-size: cover;
     width: 150px;
     height: 260px;
 }
 
-.hidden_archer {
+.setdown_archer {
     background-image: url(../asset/item-0.jpg);
     background-size: cover;
     width: 150px;
     height: 260px;
 }
 
-.hidden_lancer {
+.setdown_lancer {
     background-image: url(../asset/item-0.jpg);
     background-size: cover;
     width: 150px;

@@ -10,12 +10,12 @@ var permission = true
  *  Utilities
  * =======================================
  */
-function removeHidden(card) {
+function removeSetdown(card) {
   return card.split('_')[1]
 }
 
-function addHidden(card) {
-  return ['hidden_', card].join('')
+function addSetdown(card) {
+  return ['setdown_', card].join('')
 }
 
 function addLocked(card) {
@@ -48,7 +48,7 @@ function sequencialIntNoRepeated(rang, arr = []) {
 
 function setCards(a) {
   for(let i = 0; i < a.length; i++) {
-    document.getElementById('item-'+(i+1)).className = 'hidden_'+a[i]
+    document.getElementById('item-'+(i+1)).className = 'setdown_'+a[i]
   }
 }
 
@@ -73,7 +73,7 @@ function comparator() {
   let cards = []
   for(let i = 0; i < 6; i++) {
     card = document.getElementById('item-'+(i+1)).className
-    if(card.indexOf('hidden_') == -1 && card.indexOf('locked_') == -1) {
+    if(card.indexOf('setdown_') == -1 && card.indexOf('locked_') == -1) {
       cards.push(card)
     }
   }
@@ -86,7 +86,7 @@ function comparator() {
 function lockCards() {
   for(let i = 0; i < 6; i++) {
     card = document.getElementById('item-'+(i+1)).className
-    if(card.indexOf('hidden_') == -1 && card.indexOf('locked_') == -1) {
+    if(card.indexOf('setdown_') == -1 && card.indexOf('locked_') == -1) {
       document.getElementById('item-'+(i+1)).className = addLocked(card)
     }
   }
@@ -96,8 +96,8 @@ function lockCards() {
 function setCardsNotLockeds() {
   for(let i = 0; i < 6; i++) {
     card = document.getElementById('item-'+(i+1)).className
-    if(card.indexOf('hidden_') == -1 && card.indexOf('locked_') == -1) {
-      document.getElementById('item-'+(i+1)).className = addHidden(card)
+    if(card.indexOf('setdown_') == -1 && card.indexOf('locked_') == -1) {
+      document.getElementById('item-'+(i+1)).className = addSetdown(card)
     }
   }
 }
@@ -133,7 +133,7 @@ function shuffle() {
   }
   
   setCards(x)
-  document.getElementById('Screen').hidden = false
+  document.getElementById('Screen').setdown = false
   document.getElementById('start').innerHTML = "Shuffle"
 }
 
@@ -142,8 +142,8 @@ function flip(card_num, permission) {
     card = document.getElementById('item-'+card_num).className
     cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
   
-    if(card.indexOf('hidden_') != -1) {
-      document.getElementById("item-"+card_num).className = removeHidden(card)
+    if(card.indexOf('setdown_') != -1) {
+      document.getElementById("item-"+card_num).className = removeSetdown(card)
       ++cardsFlippeds
       document.getElementById('FlippedCards').innerHTML = cardsFlippeds.toString()
     }
