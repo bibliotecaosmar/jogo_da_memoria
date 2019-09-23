@@ -55,6 +55,13 @@ button {
     padding-top: 40px;
 }
 
+.set {
+    background-image: url(../asset/item-0.jpg);
+    background-size: cover;
+    width: 150px;
+    height: 260px;
+}
+
 .hidden_saber {
     background-image: url(../asset/item-0.jpg);
     background-size: cover;

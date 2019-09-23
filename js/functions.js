@@ -1,5 +1,12 @@
 /**
  * =======================================
+ *  System Variable
+ * =======================================
+ */
+var permission = true
+
+/**
+ * =======================================
  *  Utilities
  * =======================================
  */
@@ -16,15 +23,11 @@ function addLocked(card) {
 }
 
 function lockAll() {
-  for(let i = 0; i < 6; i++) {
-    document.getElementById('item-'(i+1)).onclick = 'null'
-  }
+  permission = false
 }
 
 function unlockAll() {
-  for(let i = 0; i < 6; i++) {
-    document.getElementById('item-'(i+1)).onclick = flip(i+1)
-  }
+  permission = true
 }
 
 /**
@@ -44,9 +47,8 @@ function sequencialIntNoRepeated(rang, arr = []) {
 }
 
 function setCards(a) {
-  let cards = ['saber', 'archer', 'lancer', 'saber', 'archer', 'lancer']
   for(let i = 0; i < a.length; i++) {
-    document.getElementById("item-"+(i+1)).className = 'hidden_'+a[i]
+    document.getElementById('item-'+(i+1)).className = 'hidden_'+a[i]
   }
 }
 
@@ -61,7 +63,8 @@ function checkFlips() {
       addPoints()
       lockCards()
     }else {
-      time = setTimeout(function(){fail(); clearTimeout(time)}, 2000)
+      lockAll()
+      time = setTimeout(function(){fail(); unlockAll(); clearTimeout(time)}, 2000)
     }
   }
 }
@@ -128,18 +131,22 @@ function shuffle() {
   for(let i = 0; i < cards.length; i++) {
     x[i] = cards[parseInt(sequence[i])]
   }
+  
   setCards(x)
   document.getElementById('Screen').hidden = false
   document.getElementById('start').innerHTML = "Shuffle"
 }
 
-function flip(card_num) {
-  card = document.getElementById('item-'+card_num).className
-  cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
-  if(card.indexOf('hidden_') != -1) {
-    document.getElementById("item-"+card_num).className = removeHidden(card)
-    ++cardsFlippeds
-    document.getElementById('FlippedCards').innerHTML = cardsFlippeds.toString()
+function flip(card_num, permission) {
+  if(permission) {
+    card = document.getElementById('item-'+card_num).className
+    cardsFlippeds = parseInt(document.getElementById('FlippedCards').innerHTML)
+  
+    if(card.indexOf('hidden_') != -1) {
+      document.getElementById("item-"+card_num).className = removeHidden(card)
+      ++cardsFlippeds
+      document.getElementById('FlippedCards').innerHTML = cardsFlippeds.toString()
+    }
+    checkFlips()
   }
-  checkFlips()
 }
